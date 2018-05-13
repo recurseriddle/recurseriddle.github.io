@@ -5,9 +5,37 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
   </head>
   <body>
-    <center>
-      <pre style="font-size: x-large; padding-top: 50px">
-        Winner!
+    <!-- rivy sybngvat cbvag ovg yriry unpxvat -->
+    <center style="text-align: center">
+      <pre style="font-family: monospace; font-size: x-large; text-align: left; display: inline-block; padding-top: 50px">
+mystery:
+        movl    x(%rip), %edx
+        sarl    %edx
+        movl    $1597463007, %eax
+        subl    %edx, %eax
+        movl    %eax, -4(%rsp)
+        movd    -4(%rsp), %xmm2
+        movss   x(%rip), %xmm1
+        mulss   .LC0(%rip), %xmm1
+        mulss   %xmm2, %xmm1
+        mulss   %xmm2, %xmm1
+        movss   .LC1(%rip), %xmm0
+        subss   %xmm1, %xmm0
+        mulss   %xmm2, %xmm0
+        movss   %xmm0, x(%rip)
+        cvttss2si       %xmm0, %eax
+        ret
+main:
+        movl    $0, %eax
+        call    mystery
+        movl    $0, %eax
+        ret
+x:
+        .long   959113979
+.LC0:
+        .long   1056964608
+.LC1:
+        .long   1069547520
       </pre>
     </center>
   </body>
